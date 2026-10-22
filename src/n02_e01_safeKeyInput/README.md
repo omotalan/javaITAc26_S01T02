@@ -1,0 +1,92 @@
+# safeKeyInput
+**Descripció**: Sprint 1, Tasca 2, Nivell 2, Exercici 1
+
+## 📌 Exercici 1 — Lectura segura des del teclat
+```
+Objectius
+
+    Aprendre a capturar i gestionar excepcions a l’hora d’introduir dades per teclat.
+    Evitar que l’aplicació es tanqui per errors d’entrada de l’usuari/ària.
+    Pràctica amb excepcions estàndard (InputMismatchException) i personalitzades.
+    Consolidar l’ús de mètodes estàtics per facilitar la reutilització del codi.
+
+Enunciat
+
+Crea una classe utilitària anomenada ConsoleReader que permeti llegir diferents tipus de dades des del teclat de manera segura. Aquesta classe ha de gestionar els errors que poden aparèixer quan l’usuari/ària introdueix valors incorrectes, com per exemple text en comptes de números.
+
+Per fer-ho, crea un únic objecte Scanner i defineix una sèrie de mètodes estàtics per llegir dades. Aquests mètodes han de mostrar un missatge personalitzat, llegir el valor i validar-lo. Si l’entrada és incorrecta, es mostrarà un missatge d’error (per exemple: “Error de format”) i es tornarà a demanar la dada fins que sigui vàlida.
+Requeriments
+
+    Tots els mètodes reben com a paràmetre un String amb el missatge que es vol mostrar.
+    Tots gestionen errors i només retornen la dada quan és vàlida.
+    El missatge s’ha de tornar a mostrar cada vegada que hi hagi un error.
+
+Mètodes a implementar
+
+Amb tractament d'InputMismatchException:
+
+public static byte readByte(String message);
+public static int readInt(String message);
+public static float readFloat(String message);
+public static double readDouble(String message);
+
+Amb una excepció personalitzada:
+
+public static char readChar(String message);
+// Només accepta un únic caràcter. Si se n’introdueix més d’un, llença una excepció personalitzada.
+
+public static String readString(String message);
+// Llegeix una cadena tal com es rep, però podries validar longitud mínima o contingut si cal.
+
+public static boolean readYesNo(String message);
+// Si l’usuari/ària introdueix “s” (minúscula), retorna true. Si introdueix “n”, retorna false.
+// Qualsevol altra entrada hauria de generar una excepció personalitzada.
+
+Exemple d’ús esperat
+
+Introdueix la teva edat: hola
+Error de format. Torna-ho a provar.
+Introdueix la teva edat: 25
+
+Consell
+
+Per no repetir codi, pots encapsular la lògica comuna (mostrar el missatge, capturar excepcions, tornar-ho a intentar) dins de bucles while, i utilitzar excepcions personalitzades per als casos que no cobreix InputMismatchException.
+```
+
+## ✨ Funcionalitats (si és aplicable)
+He extraigut ConsoleUI com la seva propia classe. Al final, Main nomè crida ConsoleUI, que crida els mètodes
+de ConsoleReader, d'on es crida l'excepció si cal.
+
+## 🛠 Tecnologies
+- Backend: Java
+
+## 🚀 Instal·lació i Execució
+1. Clonar el repositori: `git clone javaITAc26_S01T02`
+2. Execució del "Main"
+
+
+## 📸 Demo
+```bash
+Introdueix la teva edat: gh
+Error de format. Torna-ho a provar.
+Introdueix la teva edat: 18
+Edat: 18
+Introdueix el teu nom: alan
+Introdueix la teva inicial: ert
+Nomès es pot introduir un caràcter. Torna-ho a provar.
+Introdueix la teva inicial: 45
+Nomès es pot introduir un caràcter. Torna-ho a provar.
+Introdueix la teva inicial: a
+Introdueix la teva alçada: tt
+Error de format. Torna-ho a provar.
+Introdueix la teva alçada: 185
+Ets estudiant? (s/n): r
+Nomès es pot introduir 's' or 'n'. Torna-ho a provar.
+Ets estudiant? (s/n): n
+Nom: alan
+Inicial: a
+Alçada: 185.0
+Estudiant: false
+
+Process finished with exit code 0
+```
