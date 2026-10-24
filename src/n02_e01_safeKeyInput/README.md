@@ -54,8 +54,8 @@ Per no repetir codi, pots encapsular la lògica comuna (mostrar el missatge, cap
 ```
 
 ## ✨ Funcionalitats (si és aplicable)
-He extraigut ConsoleUI com la seva propia classe. Al final, Main nomè crida ConsoleUI, que crida els mètodes
-de ConsoleReader, d'on es crida l'excepció si cal.
+He extret ConsoleUI com la seva pròpia classe. Al final, Main només crida ConsoleUI, que crida els
+mètodes de ConsoleReader, d'on es llança (o es crida) l'excepció si cal.
 
 ## 🛠 Tecnologies
 - Backend: Java
